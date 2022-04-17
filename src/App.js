@@ -7,11 +7,7 @@ import Search from "./components/Search";
 
 const App = () => {
   const [searchedTxt, setSearchedTxt] = useState("");
-  const [notes, setNotes] = useState([
-    { id: uuidv4(), text: "aa", date: "15/04/2022" },
-    { id: uuidv4(), text: "bb", date: "15/04/2022" },
-    { id: uuidv4(), text: "cc", date: "15/04/2022" },
-  ]);
+  const [notes, setNotes] = useState([]);
 
   // add new notes
   const addNote = (text) => {

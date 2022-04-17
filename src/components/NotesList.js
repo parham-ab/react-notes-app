@@ -5,7 +5,8 @@ import AddNotes from "./AddNotes";
 
 const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
   return (
-    <div className="d-flex rounded justify-content-center">
+    <div className="container d-flex flex-column rounded justify-content-center">
+      <AddNotes handleAddNote={handleAddNote} />
       {notes.map((item) => (
         <Note
           key={item.id}
@@ -15,7 +16,6 @@ const NotesList = ({ notes, handleAddNote, handleDeleteNote }) => {
           handleDeleteNote={handleDeleteNote}
         />
       ))}
-      <AddNotes handleAddNote={handleAddNote} />
     </div>
   );
 };
