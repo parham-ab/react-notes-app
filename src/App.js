@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+// components
 import AddNotes from "./components/AddNotes";
-import Note from "./components/Note";
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 
@@ -16,9 +16,8 @@ const App = () => {
   return (
     <div>
       <Search handleSearchText={setSearchedTxt} />
-      <Note />
-      <NotesList />
       <AddNotes />
+      <NotesList notes={notes} />
     </div>
   );
 };
