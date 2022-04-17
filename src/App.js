@@ -13,11 +13,34 @@ const App = () => {
     { id: uuidv4(), text: "cc", date: "15/04/2022" },
   ]);
 
+  // add new notes
+  const addNote = (text) => {
+    const date = new Date();
+    const newNote = {
+      id: uuidv4(),
+      text: text,
+      date: date.toLocaleString(),
+    };
+    const newNotes = [...notes, newNote];
+    setNotes(newNotes);
+  };
+  // delete notes
+  const deleteNote = (id) => {
+    const newNotes = notes.filter((item) => item.id !== id);
+    setNotes(newNotes);
+  };
+
   return (
     <div>
       <Search handleSearchText={setSearchedTxt} />
-      <AddNotes />
-      <NotesList notes={notes} />
+      {/* <AddNotes /> */}
+      <NotesList
+        notes={notes.filter((item) =>
+          item.text.toLowerCase().includes(searchedTxt)
+        )}
+        handleAddNote={addNote}
+        handleDeleteNote={deleteNote}
+      />
     </div>
   );
 };
