@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // components
-import AddNotes from "./components/AddNotes";
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 
@@ -29,7 +28,6 @@ const App = () => {
   return (
     <div>
       <Search handleSearchText={setSearchedTxt} />
-      {/* <AddNotes /> */}
       <NotesList
         notes={notes.filter((item) =>
           item.text.toLowerCase().includes(searchedTxt)

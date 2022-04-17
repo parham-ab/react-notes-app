@@ -5,7 +5,7 @@ import { FaSave } from "react-icons/fa";
 
 const AddNotes = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
-  const charLength = 200;
+  const charLength = 500;
   // saveHandler
   const saveHandler = () => {
     if (noteText.trim().length > 0) {
@@ -29,8 +29,8 @@ const AddNotes = ({ handleAddNote }) => {
           value={noteText}
           onChange={handleChange}
         />
-        <div className="mt-1">
-          <small>{charLength - noteText.length} Remaining</small>
+        <Form.Label>{charLength - noteText.length} Remaining</Form.Label>
+        <div className="mt-1 ">
           <Button onClick={saveHandler} variant="success" size="sm">
             Save <FaSave />
           </Button>
