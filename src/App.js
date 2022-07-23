@@ -7,17 +7,6 @@ import Search from "./components/Search";
 const App = () => {
   const [searchedTxt, setSearchedTxt] = useState("");
   const [notes, setNotes] = useState([]);
-  // save to localeStorage
-  useEffect(() => {
-    const savedNotes = JSON.parse(localStorage.getItem("notes-data"));
-    if (notes.length) {
-      setNotes(savedNotes);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("notes-data", JSON.stringify(notes));
-  }, [notes]);
 
   // add new notes
   const addNote = (text) => {
