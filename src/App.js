@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { MdNorthEast } from "react-icons/md";
 import { v4 as uuidv4 } from "uuid";
 // components
 import NotesList from "./components/NotesList";
@@ -12,7 +11,8 @@ const App = () => {
   useEffect(() => {
     const savedData = localStorage.getItem("react-notes-list");
     const parsedData = JSON.parse(savedData);
-    setNotes(parsedData);
+    // setNotes to parsedData only when saved data does exist --(handling cant read properties of null error)--
+    !!savedData && setNotes(parsedData);
   }, []);
   // add new notes
   const addNote = (text) => {
