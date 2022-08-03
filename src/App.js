@@ -8,7 +8,7 @@ import Search from "./components/Search";
 const App = () => {
   const [searchedTxt, setSearchedTxt] = useState("");
   const [notes, setNotes] = useState([]);
-  // get saved data from localStorage & display it
+  // load saved data from localStorage & display it in the ui
   useEffect(() => {
     const savedData = localStorage.getItem("react-notes-list");
     const parsedData = JSON.parse(savedData);
@@ -29,9 +29,7 @@ const App = () => {
       "react-notes-list",
       JSON.stringify([...notes, newNote])
     );
-    console.log(newNote);
   };
-  // load from localStorage
   // delete notes
   const deleteNote = (id) => {
     const newNotes = notes.filter((item) => item.id !== id);
