@@ -3,6 +3,18 @@ import { v4 as uuidv4 } from "uuid";
 // components
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: ["Quicksand", "Rubik"].join(","),
+    fontSize: 15,
+    fontWeightLight: 400,
+    fontWeightMedium: 500,
+    fontWeightRegular: 600,
+    fontWeightBold: 700,
+  },
+});
 
 const App = () => {
   const [searchedTxt, setSearchedTxt] = useState("");
@@ -39,7 +51,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div theme={theme}>
       <Search handleSearchText={setSearchedTxt} />
       <NotesList
         notes={notes.filter((item) =>

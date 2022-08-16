@@ -1,7 +1,16 @@
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { useState } from "react";
+// mui
+import { Container } from "@mui/system";
+import {
+  TextField,
+  Grid,
+  Button,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import Typography from "@mui/material/Typography";
 // icons
-import { FaSave } from "react-icons/fa";
+import SaveIcon from "@mui/icons-material/Save";
 
 const AddNotes = ({ handleAddNote }) => {
   const [noteText, setNoteText] = useState("");
@@ -19,24 +28,39 @@ const AddNotes = ({ handleAddNote }) => {
   };
 
   return (
-    <div className="container col-9 col-sm-5 mb-5">
-      <h3 className="text-center">Add your new note...</h3>
-      <Form.Group className="mb-3">
-        <Form.Control
-          as="textarea"
-          rows={3}
-          placeholder="Add your new note..."
-          value={noteText}
-          onChange={handleChange}
-        />
-        <Form.Label>{charLength - noteText.length} Remaining</Form.Label>
-        <div className="mt-1 ">
-          <Button onClick={saveHandler} variant="success" size="sm">
-            Save <FaSave />
-          </Button>
-        </div>
-      </Form.Group>
-    </div>
+    <Container>
+      <Grid
+        container
+        mb={5}
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+      >
+        <Grid item>
+          <Typography variant="h5" component="h3" color="text.secondary">
+            Add your new note...
+          </Typography>
+        </Grid>
+        <Grid item mt={5}>
+          <TextField
+            label="Add your new note..."
+            placeholder="Add your new note..."
+            size="small"
+            fullWidth
+            value={noteText}
+            onChange={handleChange}
+            helperText={`${charLength - noteText.length} Remaining`}
+            InputProps={{
+              endAdornment: (
+                <IconButton onClick={saveHandler} sx={{ color: "#3f813d" }}>
+                  <SaveIcon />
+                </IconButton>
+              ),
+            }}
+          />
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

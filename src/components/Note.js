@@ -1,7 +1,7 @@
 import React from "react";
 import { Badge } from "react-bootstrap";
 // icons
-import { MdDelete } from "react-icons/md";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Note = ({ id, text, date, handleDeleteNote }) => {
   return (
@@ -12,7 +12,7 @@ const Note = ({ id, text, date, handleDeleteNote }) => {
         <Badge pill bg="dark">
           {date}
         </Badge>
-        <MdDelete
+        <DeleteIcon
           className="text-danger m-2 deleteIcon"
           onClick={() => handleDeleteNote(id)}
         />
