@@ -1,10 +1,2 @@
-@import "~bootstrap/scss/bootstrap";
-@import "reset";
-
-.note {
-  background-color: #ffb000a6;
-  span {
-    word-break: break-all;
-    white-space: pre-wrap;
-  }
-}
+@import "global/reset";
+@import "components/notes";
