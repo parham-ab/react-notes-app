@@ -28,7 +28,11 @@ const Note = ({ id, text, date, handleDeleteNote }) => {
         alignItems="center"
         mt={2}
       >
-        <Chip icon={<AccessTimeIcon />} label={date} />
+        <Chip
+          icon={<AccessTimeIcon />}
+          label={date}
+          sx={{ fontSize: "11px" }}
+        />
         <IconButton
           onClick={() => handleDeleteNote(id)}
           color="error"

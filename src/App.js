@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 // components
 import NotesList from "./components/NotesList";
@@ -51,7 +51,7 @@ const App = () => {
   };
 
   return (
-    <div theme={theme}>
+    <ThemeProvider theme={theme}>
       <Search handleSearchText={setSearchedTxt} />
       <NotesList
         notes={notes.filter((item) =>
@@ -60,7 +60,7 @@ const App = () => {
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
       />
-    </div>
+    </ThemeProvider>
   );
 };
 
