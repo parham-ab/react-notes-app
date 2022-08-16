@@ -1,4 +1,3 @@
-import React from "react";
 // icons
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Box, Chip, Divider, IconButton, Typography } from "@mui/material";

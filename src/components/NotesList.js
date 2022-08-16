@@ -1,4 +1,3 @@
-import React from "react";
 // components
 import Note from "./Note";
 import AddNotes from "./AddNotes";
