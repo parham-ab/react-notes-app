@@ -29,7 +29,7 @@ const Note = ({ id, text, date, handleDeleteNote }) => {
         mt={2}
       >
         <Chip
-          icon={<AccessTimeIcon />}
+          icon={<AccessTimeIcon sx={{ fontSize: "20px" }} />}
           label={date}
           sx={{ fontSize: "11px" }}
         />
