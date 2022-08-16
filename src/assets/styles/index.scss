@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+@import "reset";
+
+.deleteIcon {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.form-label {
+  font-size: 0.8rem;
+}
+.note {
+  background-color: #ffb000a6;
+  span {
+    word-break: break-all;
+    white-space: pre-wrap;
+  }
+}

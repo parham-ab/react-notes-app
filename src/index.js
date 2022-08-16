@@ -1,7 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import "./styles/index.scss";
+// styles
+import "./assets/styles/index.scss";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: ["Quicksand", "Rubik"].join(","),
+    fontSize: 15,
+    fontWeightLight: 400,
+    fontWeightMedium: 500,
+    fontWeightRegular: 600,
+    fontWeightBold: 700,
+  },
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <React.Fragment theme={theme}>
+    <App />
+  </React.Fragment>
+);
